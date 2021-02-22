@@ -11,6 +11,7 @@ const apiV1Router = require('./routers/api-v1');
 const app = express();
 const mongodbConfig = config.get('mongodb');
 const httpServerConfig = config.get('httpServer');
+const httpPort = process.env.PORT || httpServerConfig.port;
 
 const connectToMongoDB = async () => {    
     try {
@@ -42,7 +43,7 @@ async function initHttpServer() {
     
     app.use('/api/v1', apiV1Router());
     
-    app.listen(httpServerConfig.port, () => console.log(`HTTP server running on ${httpServerConfig.port} port`));
+    app.listen(httpPort, () => console.log(`HTTP server running on ${httpPort} port`));
 
     // error handler
     app.use((err, req, res, next) => {    
