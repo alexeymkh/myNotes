@@ -1,0 +1,6 @@
+httpServer:
+    port: HTTP_SERVER_PORT
+
+mongodb:
+    url: MONGODB_URL
+    

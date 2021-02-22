@@ -1,0 +1,6 @@
+httpServer:
+    port: 3000
+
+mongodb:
+    url: 'mongodb://localhost/my_notes'
+    
